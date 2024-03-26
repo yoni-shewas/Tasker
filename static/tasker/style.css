@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container-b {
+    display: flex;
+    justify-content: center;
+    height: 75vh;
+    padding: 1em;
+    margin: 1em;
+    gap: 13em;
+    flex-wrap: wrap;
+}
+
+.container-b h2 {
+    margin-bottom: 1em;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.task-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.task-list li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 0; 
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.add-task-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.add-task-link:hover {
+    background-color: #ddd;
+}
+
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    background-color: #333;
+}
+
+label {
+    padding: 0px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 7px 17px;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 15em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 30%;
+}

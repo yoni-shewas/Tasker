@@ -1,0 +1,25 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+    <div class="container-b">
+        <div class="left">
+            <h2>Tasks</h2>
+            <ul class="task-list">
+                {% for task, timestamp in task_data %}
+                    <li data-task="{{ task }}" data-timestamp="{{ timestamp }}">
+                        <input type="checkbox">
+                        <label>{{ task }} - {{ timestamp }}</label>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Add Task</h2>
+            <form action="{% url 'tasks:index' %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+{% endblock %}
