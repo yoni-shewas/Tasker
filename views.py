@@ -1,6 +1,7 @@
+from asyncio import taskgroups
 from django.shortcuts import render, HttpResponseRedirect
 from django import forms
-from django.urls import reverse
+from django.urls import reverse, include
 from django.utils import timezone
 
 
@@ -33,7 +34,7 @@ def index(request):
             return HttpResponseRedirect(reverse("tasks:index"))
 
     form = NewTaskForm()
-    tasks = request.session.get("tasks", [])
+    taskgroups = request.session.get("tasks", [])
     timestamps = request.session.get("timeStamp", [])
     task_data = list(zip(range(len(tasks)), tasks, timestamps))
 
