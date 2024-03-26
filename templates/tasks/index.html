@@ -1,16 +1,23 @@
 {% extends "tasks/layout.html" %}
+{% load static %}
 
 {% block body %}
     <div class="container-b">
         <div class="left">
             <h2>Tasks</h2>
             <ul class="task-list">
-                {% for task, timestamp in task_data %}
+                {% for task_index, task, timestamp in task_data %}
                     <li data-task="{{ task }}" data-timestamp="{{ timestamp }}">
                         <input type="checkbox">
-                        <label>{{ task }} - {{ timestamp }}</label>
+                        <label>{{ task }}</label>
+                        <br> 
+                        <label class="date">{{ timestamp }}</label>
+                        <a href="{% url 'tasks:delete_task' task_index %}">
+                            <img id="delete-{{ task_index }}" class="delete-btn" src="{% static 'tasks/delete.svg' %}" alt="delete">
+                        </a>
                     </li>
                 {% endfor %}
+
             </ul>
         </div>
         <div class="right">

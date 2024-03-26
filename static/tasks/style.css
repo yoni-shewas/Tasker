@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: 1px solid red; */
 }
 
 body {
@@ -10,14 +11,19 @@ body {
     color: #333;
     line-height: 1.6;
 }
+.contain{
+    display: flex;
+    flex-direction: column;
+}
 
 .container-b {
     display: flex;
     justify-content: center;
-    height: 75vh;
+    height: max-content;
+    min-height: 70vh;
     padding: 1em;
     margin: 1em;
-    gap: 13em;
+    gap: 9.5em;
     flex-wrap: wrap;
 }
 
@@ -60,13 +66,11 @@ header h1 {
 .task-list li {
     margin-bottom: 10px;
 }
-
 footer {
     background-color: #333;
     color: #fff;
     padding: 0; 
     text-align: center;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -86,13 +90,26 @@ footer {
     background-color: #ddd;
 }
 
+input[type="checkbox"] {
+    width: 1.2em;
+    height: 1.2em;
+    border: 1rem solid #333;
+    padding: 2px;
+    cursor: pointer;
+    margin-right: .3em;
+    accent-color: #333;
+}
+
+
 input[type="checkbox"]:checked + label {
     text-decoration: line-through;
-    background-color: #333;
 }
+
+
 
 label {
     padding: 0px;
+    font-size: large;
 }
 
 input[type="submit"] {
@@ -100,6 +117,11 @@ input[type="submit"] {
     color: #fff;
     padding: 7px 17px;
     border-radius: 5px;
+}
+
+input[type="submit"]:hover{
+    background-color: #4e4d4d;
+    color: #fff4f4;
 }
 
 input[type="text"] {
@@ -112,4 +134,19 @@ form {
     flex-direction: column;
     gap: 1em;
     width: 30%;
+}
+
+img{
+    width: 1.2rem;
+    margin-left: .1rem;
+}
+
+br{
+    margin-left: 1em;
+}
+
+.date{
+    margin-left: 1em;
+    color: rgb(52, 118, 51);
+    font-size: 1em;
 }
